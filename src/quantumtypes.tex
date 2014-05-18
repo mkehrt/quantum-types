@@ -1,0 +1,38 @@
+\documentclass[times]{article}
+\usepackage{mathpartir}
+\usepackage{proof}
+
+\title{Notes Towards a Quantum Type Theory}
+\author{Matthew Kehrt}
+
+\begin{document}
+
+\newcommand{\prove}[3]{#1{\cdot}#2\vdash #3}
+
+\maketitle
+\section{Introduction}
+This is meant to record my own thoughts on understanding quanum mechanics.  I have not looked at the literature on the state of analyzing quantum physics in terms of typed lambda calculi, but I know there is some prior work.
+
+We first introduce some quantum logic rules, which indicate what actions are allowed to be performed on a quantum system.  The proof terms should be very simple, after that. 
+
+\section{Quantum Logic Rules}
+
+The judgment we use for reasoning about quantum systems is
+
+\[ \prove{\Delta}{i}{\tau} \]
+
+This is just a linear logic judgment decorated with a number representing probability amplitude.
+
+\begin{mathpar}
+
+\infer{\prove{\Delta_1;\Delta_2}{i}{\tau_1\otimes\tau_2}}{\prove{\Delta_1}{i}{\tau_1}{i} \\ \prove{\Delta_2}{i}{\tau_2}} \quad
+
+\infer{\prove{\Delta}{i}{\tau_1\oplus\tau_2}}{\prove{\Delta}{i}{\tau_1} \\ \prove{\Delta}{i}{\tau_2}} \quad
+
+\quad \&  
+
+\end{mathpar}
+
+
+\section{Proof Terms?}
+\end{document}
